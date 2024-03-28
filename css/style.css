@@ -1,0 +1,124 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=DynaPuff&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'DynaPuff', cursive;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: rgb(82,123,237);
+  background: linear-gradient(90deg, rgba(82,123,237,1) 0%, rgba(39,61,207,1) 100%); 
+  flex-direction: column;
+}
+.follow{
+  position: absolute;
+  bottom: 10%;
+  display: flex;
+  grid-gap: 20px;
+}
+.follow a{
+  color: black;
+  border-radius: 10px;
+  background: whitesmoke;
+  padding: 10px;
+  font-size: 30px;
+  box-shadow: 5px 5px  10px blue;
+}
+.alert-box{
+  height: 220px;
+  width: 350px;
+  background: white;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 0 10px black;
+}
+.insta{
+  display: none;  
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 5px;
+  color: white;
+  font-size: 30px;
+  background: rgb(230,27,231);
+  background: linear-gradient(90deg, rgba(230,27,231,0.8) 28%, rgba(188,18,154,0.8) 83%); 
+  box-shadow: 0 0 20px rgba(230,27,231,0.8);
+}
+.popup{
+  animation: 0.1s pop ease-in;
+}
+@keyframes pop{
+  0%{
+    width: 300px;
+    height: 200px;
+    font-size: 5px;
+  }
+}
+
+.text-div{
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  grid-gap: 20px;
+}
+.image{
+  height: 50px;
+  width: 60px;
+  background-image: url("https://sokubmv.glitch.me/worn.png");
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center;
+}
+.btn-div{
+  height: 20%;
+  align-items: center;
+  padding: 10px;
+  justify-content: flex-end;
+  display: flex;
+  background: #f0f0f0;
+  width: 100%;
+  grid-gap: 10px;
+}
+.yes,.no,.ok2{
+  display: none;
+}
+.btn-div button{
+  height: 30px;
+  width:90px;
+  font-size: 16px;
+  background: white;
+  border: 2px solid #0078d7;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.close-btn{
+  position: absolute;
+  cursor: pointer;
+  padding: 0 5px 0 0 ;
+  color: black;
+  right: 0;
+  top: 0;
+  font-size: 30px;
+}
+.hilao{
+  animation: 0.1s hila linear;
+}
+@keyframes hila{
+  0%,100%{transform: translateX(0);}
+  20%{transform: translateX(-20px) rotate(-20deg);}
+  40%{transform: translateX(0px) rotate(0);}
+  60%{transform: translateX(20px) rotate(20deg);}
+  80%{transform: translateX(-20px) rotate(-20deg);}
+}

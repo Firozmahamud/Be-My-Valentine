@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Be My Valentine</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="alert-box">
+    <div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
+    <div class="text-div">
+      <div class="image"></div>
+      <p>Your phone has been hacked.</p>
+      <a class="insta" target="_blank">
+        <!-- <i class="fa-brands fa-instagram"></i> -->
+    <!-- </div><i class="fa-regular fa-face-kiss-wink-heart"></i> -->
+    <i class="fa-regular fa-heart"></i>
+
+        </a>
+    <div class="btn-div">
+      <button class="ok">OK</button>
+      <button class="ok2">OK</button>
+      <button class="yes">YES</button>
+      <button class="no">NO</button>
+    </div>
+  </div>
+  <!-- <div class="follow">
+    <a href="https://www.youtube.com/@davecantorna2737"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.instagram.com/davecantorna/"><i class="fa-brands fa-instagram"></i></a>
+  </div> -->
+</body>
+<script type="text/javascript">
+  let cont = document.querySelector(".alert-box");
+  let btnDiv = document.querySelector(".btn-div");
+  let closeBtn = document.querySelector(".close-btn");
+  let img = document.querySelector(".image");
+  let text = document.querySelector("p");
+  let okBtn = document.querySelector(".ok");
+  let okBtn2 = document.querySelector(".ok2");
+  let yesBtn = document.querySelector(".yes");
+  let noBtn = document.querySelector(".no");
+  let insta = document.querySelector(".insta");
+  var count = 0;
+
+
+  let error1 = new Audio("https://sokubmv.glitch.me/error1.mp3");
+  let error2 = new Audio("https://sokubmv.glitch.me/Error2.mp3");
+  let click = new Audio("https://sokubmv.glitch.me/click.mp3");
+  let naSahi = new Audio("https://sokubmv.glitch.me/na.mp3");
+  let sfx = new Audio("https://sokubmv.glitch.me/Wakeupum.mp3");
+
+
+
+  // error2.play();
+
+  okBtn.addEventListener("click",event =>{
+    text.innerHTML = "However, I just have a question for You";
+    okBtn.style.display = "none";
+    okBtn2.style.display = "flex";
+    cont.classList.remove("popup");
+    setInterval(pop);
+    click.play();
+  } )
+  okBtn2.addEventListener("click",event=>{
+    text.innerHTML = "Do you love me ?";
+    cont.classList.remove("popup");
+    setInterval(pop);
+    click.play();
+    okBtn2.style.display = "none";
+    yesBtn.style.display = "flex";
+    noBtn.style.display = "flex";
+  })
+  noBtn.addEventListener("click", event =>{
+    text.innerHTML = "Please love me 😥";
+    text.style.fontSize = "20px";
+    yesBtn.innerHTML = "OK";
+    error2.play();
+    cont.classList.remove("popup");
+    setInterval(pop);
+    count ++;
+  if(count==6){
+    text.innerHTML = "🥺🥺🥺🥺";
+    okBtn2.style.display = "none";
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+    img.style.backgroundImage = "url(https://sokubmv.glitch.me/sad.gif)"
+    img.style.height = "100%"
+    img.style.width = "80%"
+    btnDiv.style.display ="none";
+    naSahi.play();
+  }
+  })
+  yesBtn.addEventListener("click",event=>{
+    text.innerHTML = " 🥰 🥰 i love you more🥰 🥰";
+    img.style.height = "100%"
+    img.style.width = "80%"
+    img.style.backgroundImage = "url(https://sokubmv.glitch.me/love.gif)";
+    btnDiv.style.display = "none";
+    insta.style.display = "flex";
+    sfx.play();
+  })
+  function pop(){
+    cont.classList.add("popup");
+  }
+
+   closeBtn.addEventListener("click",event=>{
+    cont.classList.remove("hilao");
+    error1.play();
+    setInterval(vib);
+  })
+  function vib(){
+    cont.classList.add("hilao");
+  }
+</script>
+</html>
